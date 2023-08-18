@@ -16,9 +16,9 @@ local Colors = {}
 
 -- Options
 local Default = {
-	MainColor = Color3.fromRGB(41, 74, 122):ToHex(),
+	MainColor = Color3.fromRGB(72, 0, 180):ToHex(),
 	MinSize = { X = 500, Y = 500 },
-	ToggleKey = "RightShift",
+	ToggleKey = "LeftControl",
 	CanResize = true,
 }
 
@@ -3054,7 +3054,7 @@ function Library:AddWindow(title, Options)
 			NewInstance.Enabled = not State
 
 			Setting.ToggleKey = Func.Bind
-			writefile("EleriumSettings", HttpService:JSONEncode(Setting))
+			writefile("EleriumSettings.json", HttpService:JSONEncode(Setting))
 		end, {
 			Default = IsKeyCode(Setting.ToggleKey) or IsKeyCode(Default.ToggleKey),
 			Enabled = NewInstance.Enabled,
